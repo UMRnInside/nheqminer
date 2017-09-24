@@ -2,3 +2,6 @@
 	path = nheqminer/external/equihash-xenon
 	url = https://github.com/kost/equihash-xenon
 	branch = kost
+[submodule "nheqminer/external/simde"]
+	path = nheqminer/external/simde
+	url = https://github.com/nemequ/simde.git
