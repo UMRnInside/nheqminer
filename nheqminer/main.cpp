@@ -75,6 +75,7 @@ int main(int argc, char* argv[])
 {
 	std::cout << "Kost CPU Miner with UMRnInside's Mods" << std::endl << "https://github.com/UMRnInside/nheqminer-SIMDe " STANDALONE_MINER_NAME "/" STANDALONE_MINER_VERSION << std::endl;
 	std::cout << "Thanks to Zcash developers and community, nicehash, tromp and xenoncat. Donate!" << std::endl;
+    std::cout << "And special thanks to nemequ for his contribution to SIMDe." << std::endl;
 	std::cout << "Kost's BTC:1KHRiwNdFiL4uFUGFEpbG7t2F3pUcttLuX ZEC:t1JBZzdaUUSJDs8q7SUxcCSzakThqtNRtNv" << std::endl;
 	std::cout << std::endl;
 

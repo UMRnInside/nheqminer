@@ -17,6 +17,9 @@
 // These don't work everywhere
 #if (defined(__SSE2__) || defined(_M_AMD_64) || defined(_M_X64))
 #define HAVE_SSE2
+#elif defined(USE_SIMDE)
+#define HAVE_SSE2
+#warning The SIMDe mod is still experimental
 #endif
 
 #if defined(__SSSE3__)
