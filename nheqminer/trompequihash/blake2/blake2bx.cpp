@@ -25,6 +25,8 @@
 #include <intrin.h>
 #endif
 
+#ifndef USE_SIMDE
+
 #include <emmintrin.h>
 #if defined(HAVE_SSSE3)
 #include <tmmintrin.h>
@@ -38,6 +40,8 @@
 #if defined(HAVE_XOP)
 #include <x86intrin.h>
 #endif
+
+#endif //USE_SIMDE not defined
 
 #include "blake2b-round.h"
 

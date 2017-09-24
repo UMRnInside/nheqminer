@@ -15,8 +15,7 @@
 #define __BLAKE2B_LOAD_SSE2_H__
 
 #ifdef USE_SIMDE
-#include "sse2.h"
-#define _mm_set_epi64x simde_mm_set_epi64x
+#include "sse-simde.h"
 #endif //USE_SIMDE
 
 #define LOAD_MSG_0_1(b0, b1) b0 = _mm_set_epi64x(m2, m0); b1 = _mm_set_epi64x(m6, m4)

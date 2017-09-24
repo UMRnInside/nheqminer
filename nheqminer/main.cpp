@@ -21,7 +21,6 @@
 // fix compiler issues with standard vs2013 compiler
 // file logging
 // mingw compilation for windows (faster?)
-
 int equiengine;
 
 static ZcashStratumClient* scSig;

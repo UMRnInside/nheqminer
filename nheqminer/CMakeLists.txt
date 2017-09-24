@@ -90,13 +90,16 @@ else()
 	set (TROMPBLAKE "trompequihash/blake2")
 	set (TROMPBLAKESOURCES "${TROMPBLAKE}/blake2bx.cpp")
 
-    if (SIMDE)
-        add_definitions("-DUSE_SIMDE")
-        set (SIMDE_SSE2_HEADER "external/simde/simde/x86/sse2.h")
-	    set (TROMPBLAKEHEADERS "${TROMPBLAKE}/blake2-config.h" "${TROMPBLAKE}/blake2-impl.h" "${TROMPBLAKE}/blake2-round.h" "${TROMPBLAKE}/blake2.h" "${TROMPBLAKE}/blake2b-load-sse2.h" "${TROMPBLAKE}/blake2b-round.h" "${SIMDE_SSE2_HEADER}")
-    else()
-	    set (TROMPBLAKEHEADERS "${TROMPBLAKE}/blake2-config.h" "${TROMPBLAKE}/blake2-impl.h" "${TROMPBLAKE}/blake2-round.h" "${TROMPBLAKE}/blake2.h" "${TROMPBLAKE}/blake2b-load-sse2.h" "${TROMPBLAKE}/blake2b-load-sse41.h" "${TROMPBLAKE}/blake2b-round.h")
-    endif()
+	if (SIMDE)
+		add_definitions("-DUSE_SIMDE")
+		add_definitions("-D__NONINTEL__")
+
+		set (SIMDE_HEADERS "external/simde/simde/x86")
+		set (TROMPBLAKEHEADERS "${TROMPBLAKE}/blake2-config.h" "${TROMPBLAKE}/blake2-impl.h" "${TROMPBLAKE}/blake2-round.h" "${TROMPBLAKE}/blake2.h" "${TROMPBLAKE}/blake2b-load-sse2.h" "${TROMPBLAKE}/blake2b-round.h" "${TROMPBLAKE}/sse-simde.h" "${SIMDE_HEADERS}/sse2.h")
+		include_directories (SYSTEM ${SIMDE_HEADERS})
+    	else()
+		set (TROMPBLAKEHEADERS "${TROMPBLAKE}/blake2-config.h" "${TROMPBLAKE}/blake2-impl.h" "${TROMPBLAKE}/blake2-round.h" "${TROMPBLAKE}/blake2.h" "${TROMPBLAKE}/blake2b-load-sse2.h" "${TROMPBLAKE}/blake2b-load-sse41.h" "${TROMPBLAKE}/blake2b-round.h")
+	endif()
 
 endif()
 
