@@ -19,7 +19,7 @@
 #define HAVE_SSE2
 #endif
 
-#if defined(__ARM_NEON) && !defined(HAVE_SSE2)
+#if defined(USE_SIMDE) && !defined(HAVE_SSE2)
 #define HAVE_SSE2
 #warning The SIMDe mod is still experimental
 #endif
