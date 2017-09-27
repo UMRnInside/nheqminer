@@ -6,10 +6,12 @@ option(XENON "Build options with xenoncat")
 option(MARCH "GCC options for architecture (default: native)")
 option(MOPT "GCC options for optimization (default: -O3)")
 option(NONINTEL "Set true if running on non-intel architectures")
+option(SIMDE "Set true to make TROMP faster on non-intel architectures, breaks NONINTEL")
+option(OPENMP "OpenMP 4 SIMD. Set true for better performance for SIMDe")
 
 
 project(nheqminer)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 # LINUX
 if(CMAKE_COMPILER_IS_GNUCXX)
@@ -28,6 +30,11 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 		add_definitions("${MOPT}")
 	else()
 		add_definitions("-O3")
+	endif()
+
+	# OpenMP 4 SIMD, nemequ said it can accelerate SIMDe
+	if (OPENMP)
+		add_definitions("-fopenmp-simd -DSIMDE_ENABLE_OPENMP")
 	endif()
 endif()
 
