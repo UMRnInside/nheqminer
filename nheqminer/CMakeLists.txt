@@ -9,7 +9,7 @@ option(NONINTEL "Set true if running on non-intel architectures")
 
 
 project(nheqminer)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
 
 # LINUX
 if(CMAKE_COMPILER_IS_GNUCXX)
@@ -92,7 +92,7 @@ else()
 
 	if (SIMDE)
 		add_definitions("-DUSE_SIMDE")
-		add_definitions("-D__NONINTEL__")
+		#add_definitions("-D__NONINTEL__")
 
 		set (SIMDE_HEADERS "external/simde/simde/x86")
 		set (TROMPBLAKEHEADERS "${TROMPBLAKE}/blake2-config.h" "${TROMPBLAKE}/blake2-impl.h" "${TROMPBLAKE}/blake2-round.h" "${TROMPBLAKE}/blake2.h" "${TROMPBLAKE}/blake2b-load-sse2.h" "${TROMPBLAKE}/blake2b-round.h" "${TROMPBLAKE}/sse-simde.h" "${SIMDE_HEADERS}/sse2.h")

@@ -5,7 +5,7 @@
 
 // WARNING: Some instructions were not impleted!
 #include "sse2.h"
-#include "sse4.1.h" 
+//#include "sse4.1.h" 
 
 #define __m128i simde__m128i
 #define _mm_add_epi64 simde_mm_add_epi64

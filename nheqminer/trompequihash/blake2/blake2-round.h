@@ -1,8 +1,3 @@
-#ifdef USE_SIMDE
-#include "sse2.h"
-#define _mm_set_epi64x simde_mm_set_epi64x
-#endif //USE_SIMDE
-
 #define _mm_roti_epi64(x, c) \
 	(-(c) == 32) ? _mm_shuffle_epi32((x), _MM_SHUFFLE(2,3,0,1))  \
 	: (-(c) == 24) ? _mm_shuffle_epi8((x), r24) \
