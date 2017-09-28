@@ -5,10 +5,10 @@ Equihash/zcash/zec miner (can be used for pool mining)
 **NOTE: Common mistake is to clone this repo without recursive, you need to use --recursive**
 
 ```
-git clone --recursive https://github.com/kost/nheqminer
+git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe
 ```
 
-**Your build with XENON/XENONCAT will fail otherwise**
+*Your build with XENON/XENONCAT will fail otherwise**
 
 # Features
 
@@ -71,7 +71,7 @@ Note AVX/AVX2 binaries should automatically downgrade to tromp if nothing else f
 Full example:
 ```
 sudo apt-get install cmake build-essential libboost-all-dev
-git clone --recursive https://github.com/kost/nheqminer.git
+git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe
 cd nheqminer/nheqminer
 mkdir build
 cd build
@@ -83,7 +83,7 @@ make
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Ubuntu open a terminal and run the following commands:
   - `sudo apt-get install cmake build-essential libboost-all-dev`
-  - `git clone --recursive https://github.com/kost/nheqminer.git`
+  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -96,7 +96,7 @@ Note: for the fastest miner, it is recommended to use `cmake -DXENON=1 ..`
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Fedora open a terminal and run the following commands:
   - `sudo dnf install mingw64-winpthreads-static mingw64-boost-static cmake make git`
-  - `git clone --recursive https://github.com/kost/nheqminer.git`
+  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -107,7 +107,7 @@ Under Fedora open a terminal and run the following commands:
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Alpine open a terminal and run the following commands:
   - `sudo apk add --update git cmake make gcc g++ libc-dev boost-dev`
-  - `git clone --recursive https://github.com/kost/nheqminer.git`
+  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -118,7 +118,7 @@ Under Alpine open a terminal and run the following commands:
 ## Mac OS X  (Tromp and Xenoncat):
 You need to have git, cmake, make and Mac OS X Developer stuff (compiler, etc).
 Under Mac open a terminal and run the following commands:
-  - `git clone --recursive https://github.com/kost/nheqminer.git`
+  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -129,26 +129,29 @@ Under Mac open a terminal and run the following commands:
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Raspbian open a terminal and run the following commands:
   - `sudo apt-get install git cmake build-essential libboost-all-dev`
-  - `git clone --recursive https://github.com/kost/nheqminer.git`
+  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
-  - `cmake -DNONINTEL=1 ..`
+  - `cmake -DNONINTEL=1 ..` or
+  - `cmake -DNONINTEL=1 -DSIMDE=1 -DOPENMP=1` for SIMDe
   - `make`
 
 ## Linux cmake on Raspberry PI (Tested on Alpine on Raspberry PI):
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Alpine open a terminal and run the following commands:
   - `sudo apk add --update git cmake make gcc g++ libc-dev boost-dev`
-  - `git clone --recursive https://github.com/kost/nheqminer.git`
+  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
-  - `cmake -DNONINTEL=1 -DSTATIC_BUILD=1 ..`
+  - `cmake -DNONINTEL=1 -DSTATIC_BUILD=1 ..` or
+  - `cmake -DNONINTEL=1 -DSTATIC_BUILD=1 -DSIMDE=1 -DOPENMP=1 ..` for SIMDe
   - `make`
 
+
 ## Windows (Microsoft Visual Studio - needs tweaking):
-Windows builds made by us are available here: https://github.com/kost/nheqminer/releases
+Windows builds made by us are available here: https://github.com/UMRnInsode/nheqminer/releases
 
 Download and install:
 - Visual Studio 2013 Community: https://www.visualstudio.com/en-us/news/releasenotes/vs2013-community-vs
@@ -216,7 +219,10 @@ Example to mine with your own ZEC address and worker1 on EU server, using 6 thre
 <i>Note: if you have a 4-core CPU with hyper threading enabled (total 8 threads) it is best to run with only 6 threads (experimental benchmarks shows that best results are achieved with 75% threads utilized)</i>
 
 
-
+# Notes
+ - On ARM64 SIMDe seems to run slowlier then nonintel
+ - SIMDe have complete SSE3 simulation only
+ - SIMDe wrapped only TROMP-SSE2
 
 # Acknowledgments and credits
 
@@ -227,18 +233,17 @@ Thanks to Zcash developers for providing most of the code
 Special thanks to tromp for providing optimized CPU equihash solver
 Special thanks to xenoncat for providing assembly optimized CPU equihash solver
 Special thanks to [Zcash Community on Slack](https://zcashcommunity.slack.com)
+Special thanks to nemequ, the author os [SIMD Everywhere](https://github.com/nemequ/simde)
 
 ## Credits
 
-Author of this miner: Kost
+Author of this miner: Kost, UMRnInside
 
 ## Donations
 
 If you feel this project is useful to you. Feel free to donate.
 
-    BTC address: 1KHRiwNdFiL4uFUGFEpbG7t2F3pUcttLuX
+    Kost's BTC address: 1KHRiwNdFiL4uFUGFEpbG7t2F3pUcttLuX
 
-    ZEC address: t1JBZzdaUUSJDs8q7SUxcCSzakThqtNRtNv
-
-
+    Kost's ZEC address: t1JBZzdaUUSJDs8q7SUxcCSzakThqtNRtNv
 
