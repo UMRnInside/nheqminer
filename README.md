@@ -2,13 +2,13 @@
 
 Equihash/zcash/zec miner (can be used for pool mining)
 
-**NOTE: Common mistake is to clone this repo without recursive, you need to use --recursive**
+**NOTE: Common mistake is to clone this repo without recursion, you need to use --recursive**
 
 ```
 git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe
 ```
 
-*Your build with XENON/XENONCAT will fail otherwise**
+**Your build with XENON/XENONCAT will fail otherwise**
 
 # Features
 
@@ -71,7 +71,7 @@ Note AVX/AVX2 binaries should automatically downgrade to tromp if nothing else f
 Full example:
 ```
 sudo apt-get install cmake build-essential libboost-all-dev
-git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe
+git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe
 cd nheqminer/nheqminer
 mkdir build
 cd build
@@ -83,7 +83,7 @@ make
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Ubuntu open a terminal and run the following commands:
   - `sudo apt-get install cmake build-essential libboost-all-dev`
-  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
+  - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -96,7 +96,7 @@ Note: for the fastest miner, it is recommended to use `cmake -DXENON=1 ..`
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Fedora open a terminal and run the following commands:
   - `sudo dnf install mingw64-winpthreads-static mingw64-boost-static cmake make git`
-  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
+  - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -107,7 +107,7 @@ Under Fedora open a terminal and run the following commands:
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Alpine open a terminal and run the following commands:
   - `sudo apk add --update git cmake make gcc g++ libc-dev boost-dev`
-  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
+  - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -118,7 +118,7 @@ Under Alpine open a terminal and run the following commands:
 ## Mac OS X  (Tromp and Xenoncat):
 You need to have git, cmake, make and Mac OS X Developer stuff (compiler, etc).
 Under Mac open a terminal and run the following commands:
-  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
+  - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -129,7 +129,7 @@ Under Mac open a terminal and run the following commands:
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Raspbian open a terminal and run the following commands:
   - `sudo apt-get install git cmake build-essential libboost-all-dev`
-  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
+  - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -141,7 +141,7 @@ Under Raspbian open a terminal and run the following commands:
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Alpine open a terminal and run the following commands:
   - `sudo apk add --update git cmake make gcc g++ libc-dev boost-dev`
-  - `git clone --recursive https://github.com/UMRnInsode/nheqminer-SIMDe`
+  - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
   - `cd nheqminer/nheqminer`
   - `mkdir build`
   - `cd build`
@@ -151,7 +151,7 @@ Under Alpine open a terminal and run the following commands:
 
 
 ## Windows (Microsoft Visual Studio - needs tweaking):
-Windows builds made by us are available here: https://github.com/UMRnInsode/nheqminer/releases
+Windows builds made by kost are available here: https://github.com/kost/nheqminer/releases
 
 Download and install:
 - Visual Studio 2013 Community: https://www.visualstudio.com/en-us/news/releasenotes/vs2013-community-vs
@@ -171,7 +171,7 @@ Mac OS X:
 cmake -DXENON=1 -DSTATIC_BUILD=1 -DMARCH="-m64" ..
 ```
 
-Windows (on Fedora 23 with MingW) (Docker: fedora:23):
+Windos (on Fedora 23 with MingW) (Docker: fedora:23):
 ```
 cmake -DXENON=1 -DSTATIC_BUILD=1 -DMARCH="-m64" -DCMAKE_TOOLCHAIN_FILE=../toolchain-mingw64.cmake ..
 ```
@@ -233,7 +233,7 @@ Thanks to Zcash developers for providing most of the code
 Special thanks to tromp for providing optimized CPU equihash solver
 Special thanks to xenoncat for providing assembly optimized CPU equihash solver
 Special thanks to [Zcash Community on Slack](https://zcashcommunity.slack.com)
-Special thanks to nemequ, the author os [SIMD Everywhere](https://github.com/nemequ/simde)
+Special thanks to nemequ, the author of [SIMD Everywhere](https://github.com/nemequ/simde)
 
 ## Credits
 
