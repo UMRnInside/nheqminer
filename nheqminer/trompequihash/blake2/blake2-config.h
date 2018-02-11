@@ -21,6 +21,8 @@
 
 #if defined(USE_SIMDE) && !defined(HAVE_SSE2)
 #define HAVE_SSE2
+// New SIMDe finally support SSE4.1 at commit 8163ad3
+#define HAVE_SSE41
 #warning The SIMDe mod is still experimental
 #endif
 
