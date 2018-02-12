@@ -2,8 +2,9 @@
 #ifndef _SSE2_SIMDE_H_
 #define _SSE2_SIMDE_H_
 
-#include "sse2.h"
+#warning SIMDe support is experimental
 #include "sse4.1.h" 
+#include "sse2.h"
 
 #define __m128i simde__m128i
 #define _mm_add_epi64 simde_mm_add_epi64
@@ -15,7 +16,7 @@
 #define _mm_loadu_si128 simde_mm_loadu_si128
 //#define _mm_roti_epi64 simde_mm_roti_epi64
 #define _mm_set_epi64x simde_mm_set_epi64x
-#define _mm_setr_epi8 simde_mm_setr_epi9
+#define _mm_setr_epi8 simde_mm_setr_epi8
 #define _mm_shuffle_epi32 simde_mm_shuffle_epi32
 #define _mm_shuffle_epi8 simde_mm_shuffle_epi8
 #define _mm_store_si128 simde_mm_store_si128
@@ -28,4 +29,5 @@
 #define _mm_slli_epi64 simde_mm_slli_epi64
 #define _mm_srli_epi64 simde_mm_srli_epi64
 
+#define _MM_SHUFFLE(z,y,x,w) ((z << 6) | (y <<4) | (x << 2) | w)
 #endif

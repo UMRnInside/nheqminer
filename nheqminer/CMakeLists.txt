@@ -99,6 +99,7 @@ else()
 
 	if (SIMDE)
 		add_definitions("-DUSE_SIMDE")
+        add_definitions("-flax-vector-conversions")
 		#add_definitions("-D__NONINTEL__")
 
 		set (SIMDE_HEADERS "external/simde/simde/x86")
