@@ -97,7 +97,7 @@ You should have **CMake** installed (2.8 minimal version), boost (install from t
 Under Fedora open a terminal and run the following commands:
   - `sudo dnf install mingw64-winpthreads-static mingw64-boost-static cmake make git`
   - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
-  - `cd nheqminer/nheqminer`
+  - `cd nheqminer-SIMDe/nheqminer`
   - `mkdir build`
   - `cd build`
   - `cmake -DSTATIC_BUILD=1 -DXENON=1 -DMARCH="-m64" ..`
@@ -108,7 +108,7 @@ You should have **CMake** installed (2.8 minimal version), boost (install from t
 Under Alpine open a terminal and run the following commands:
   - `sudo apk add --update git cmake make gcc g++ libc-dev boost-dev`
   - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
-  - `cd nheqminer/nheqminer`
+  - `cd nheqminer-SIMDe/nheqminer`
   - `mkdir build`
   - `cd build`
   - `cmake -DSTATIC_BUILD=1 -DXENON=1 -DMARCH="-m64" ..`
@@ -119,7 +119,7 @@ Under Alpine open a terminal and run the following commands:
 You need to have git, cmake, make and Mac OS X Developer stuff (compiler, etc).
 Under Mac open a terminal and run the following commands:
   - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
-  - `cd nheqminer/nheqminer`
+  - `cd nheqminer-SIMDe/nheqminer`
   - `mkdir build`
   - `cd build`
   - `cmake -DXENON=1 -DSTATIC_BUILD=1 ..`
@@ -130,7 +130,7 @@ You should have **CMake** installed (2.8 minimal version), boost (install from t
 Under Raspbian open a terminal and run the following commands:
   - `sudo apt-get install git cmake build-essential libboost-all-dev`
   - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
-  - `cd nheqminer/nheqminer`
+  - `cd nheqminer-SIMDe/nheqminer`
   - `mkdir build`
   - `cd build`
   - `cmake -DNONINTEL=1 ..` or
@@ -142,7 +142,7 @@ You should have **CMake** installed (2.8 minimal version), boost (install from t
 Under Alpine open a terminal and run the following commands:
   - `sudo apk add --update git cmake make gcc g++ libc-dev boost-dev`
   - `git clone --recursive https://github.com/UMRnInside/nheqminer-SIMDe`
-  - `cd nheqminer/nheqminer`
+  - `cd nheqminer-SIMDe/nheqminer`
   - `mkdir build`
   - `cd build`
   - `cmake -DNONINTEL=1 -DSTATIC_BUILD=1 ..` or
